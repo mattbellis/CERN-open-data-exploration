@@ -28,14 +28,24 @@ jet_phi = tree.array('jet_phi').flatten()
 
 print(jet_pt)
 
-plt.figure()
+plt.figure(figsize=(8,5))
 plt.hist(jet_pt,bins=100,range=(0,500))
+plt.xlabel(r'Jet $p_T$ [GeV/c]', fontsize=18)
+plt.yscale('log')
+plt.tight_layout()
+plt.savefig('jetpT.png')
 
-plt.figure()
+plt.figure(figsize=(8,5))
 plt.hist(jet_eta,bins=100)
+plt.xlabel(r'Jet $\eta$', fontsize=18)
+plt.tight_layout()
+plt.savefig('jeteta.png')
 
-plt.figure()
+plt.figure(figsize=(8,5))
 plt.hist(jet_phi,bins=100)
+plt.xlabel(r'Jet $\phi$', fontsize=18)
+plt.tight_layout()
+plt.savefig('jetphi.png')
 
 plt.show()
 
